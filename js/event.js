@@ -1,6 +1,7 @@
 function CargaFunciones() {
   //alert("entramos a Carga de FN");
 	FechaHora();
+	catalogoVenta();
 }
 
 
@@ -90,7 +91,7 @@ function catalogo(){
 
 		var foo1 = myArray.map(function(bar){
 		  //return '<li>'+bar.marca+' '+bar.modelo+'</li>'
-			return '<div class="row"><div class="col-4 h3 text-center"><img src="'+bar.imagen+'" class="img_sueter" alt=""></div><div class="col-4 h3 text-center">'+bar.nombre+'</div><div class="col-4 h3 text-center">$ '+bar.precio+'</div></div>';
+			return '<div class="row"><div class="col-4 text-center"><img src="'+bar.imagen+'" class="img_sueter" alt=""></div><div class="col-4 text-center">'+bar.nombre+'</div><div class="col-4 text-center">$ '+bar.precio+'</div></div>';
 		});
 		 return document.getElementById("cat_prod").innerHTML = foo1;
 
@@ -101,7 +102,6 @@ function catalogoVenta(){
 		var foo1 = myArray.map(function(bar){
 			//return '<div class="row"><div class="col-4 text-center"><img src="'+bar.imagen+'" class="img_sueter" alt=""></div><div class="col-4 h3 text-center">'+bar.nombre+'</div><div class="col-4 h3 text-center">$ '+bar.precio+'</div></div>';
 			return '<div class="row"><div class="col-4 text-center"><img class="img_sueter_vta" src="'+bar.imagen+'" alt=""></div><div class="col-4 text-center">'+bar.nombre+'</div><div class="col-3 text-center">$350</div><div class="col-1 text-center"><div><button class="button_plus" onclick="agregarcarrito('+bar.id+')"><i class="fas fa-plus-circle"></i></button></div></div></div>';
-			//return 'hola ';
 		});
 		 return document.getElementById("prod_vta").innerHTML = foo1;
 		
@@ -110,4 +110,36 @@ function catalogoVenta(){
 
 function agregarcarrito(var_id){
 	console.log('Var ID: '+var_id);
+}
+function altaproducto(){
+	var_imagen = document.getElementById("f_imagen").value;
+	var_nombre = document.getElementById("f_nombre").value;
+	var_precio = document.getElementById("f_precio").value;
+	
+	if(var_nombre == ""){
+		alert("El campo NOMBRE está vacio");
+	}if(var_precio == ""){
+		alert("El campo PRECIO está vacio");
+	}else{
+		myArray.push({
+				"id":"007",
+				"imagen": "img/"+var_imagen+".png",
+				"nombre": var_nombre,
+				"precio": var_precio
+			});
+
+			alert("elemento cargado satisfactoriamente");
+			document.getElementById("f_nombre").value="";
+			document.getElementById("f_precio").value="";
+			cargaAltaprod()
+	}
+	
+};
+
+function cargaAltaprod(){
+	console.log("acá cargamos los productos");
+	var carga = myArray.map(function(bar){
+			return '<div class="row"><div class="col-4  text-center"><img src="'+bar.imagen+'" class="img_sueter" alt=""></div><div class="col-4 text-center">'+bar.nombre+'</div><div class="col-4 text-center">$ '+bar.precio+'</div></div>';
+		});
+		 return document.getElementById("cargaAlta").innerHTML = carga;
 }

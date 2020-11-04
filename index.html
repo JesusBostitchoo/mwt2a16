@@ -40,7 +40,7 @@
 						</div>
 						<div class="col-2 text-center button-top">
 							<div class="" id="headingTwo">
-								<button class="btn btn-link border item_date" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								<button onclick="cargaAltaprod()" class="btn btn-link border item_date" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 										<div class="h1"><i class="fas fa-plus-circle"></i></div>
 										<div>Agregar producto</div>
 								</button>
@@ -136,6 +136,7 @@
 											<div class="row">
 												<div class="col-md-12 h3 text-center">VENTA</div>
 											</div>
+											<!--
 											<div class="row">
 												<div class="col-md-12">
 													Sueter de navidad
@@ -189,7 +190,9 @@
 													$350
 												</div>
 											</div>
+											-->
 											<div class="row">
+											
 												<div class="col-md-12">
 													<hr>
 												</div>
@@ -220,33 +223,44 @@
 									
 										
 									
-									<form>
+									
 										<div class="row">
 											<div class="col-md-10">
 											
 													<div class="mb-3">
 													<label for="exampleInputEmail1" class="form-label">Imagen</label>
-															<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+															<input type="text" class="form-control"  value="silueta" id="f_imagen" aria-describedby="emailHelp" disabled>
 													</div>
 													<div class="mb-3">
 															<label for="exampleInputPassword1" class="form-label">Nombre</label>
-															<input type="text" class="form-control" >
+															<input type="text" class="form-control" id="f_nombre">
 													</div>
 													<div class="mb-3">
-															<label for="exampleInputPassword1" class="form-label">Precio</label>
-															<input type="text" class="form-control" >
+															<label for="exampleInputPassword1" class="form-label" >Precio</label>
+															<input type="number" class="form-control" id="f_precio">
 													</div>
 													
 													
 													
 											</div>
 											<div class="col-md-2 text-center">
-												<button type="submit" class="btn btn-primary">
-												<div class="h1"><i class="fas fa-plus-circle"></i></div>Submit</button>
+											
+												<button onclick="altaproducto()" class="btn btn-primary">
+												<div class="h1"><i class="fas fa-plus-circle"></i></div>Submit
+												</button>
 											</div>
 										</div>
-										</form>
+										
 										<div class="col-md-12 border">
+										<div class="row">
+												<div class="col-4 h3 text-center">Imagen</div>
+												<div class="col-4 h3 text-center">Nombre</div>
+												<div class="col-4 h3 text-center">Precio</div>
+												
+											</div>
+										</div>
+										<div id="cargaAlta" class="col-md-12 border">
+										<!--
 											<div class="row">
 												<div class="col-4 h3 text-center">Imagen</div>
 												<div class="col-4 h3 text-center">Nombre</div>
@@ -279,7 +293,7 @@
 												<div class="col-4 text-center">Sueter navidad</div>
 												<div class="col-4 text-center">$350</div>
 											</div>
-											
+											-->
 										</div>
 									</div>
 								  </div>
@@ -288,9 +302,17 @@
 							  <div class="">
 								<div id="collapseThree" class="collapse card" aria-labelledby="headingThree" data-parent="#accordionExample">
 								  <div class="card-body p-5">
-								  <div class="text-center invitan_Title"> CATÁLOGO DE PRODUCTOS</div>
+								  <div class="text-center invitan_Title h1"> CATÁLOGO DE PRODUCTOS</div>
 									<div class="container-fluid">
 										<div class="row">
+											<div id="" class="col-md-12 border">
+											<div class="row">
+														<div class="col-4 h3 text-center">Imagen</div>
+														<div class="col-4 h3 text-center">Nombre</div>
+														<div class="col-4 h3 text-center">Precio</div>
+
+													
+											</div>
 											<div id="cat_prod" class="col-md-12 border">
 													<!--
 													<div class="row">
