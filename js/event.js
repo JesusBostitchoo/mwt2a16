@@ -21,10 +21,10 @@ function FechaHora(){
 			hour = hour - 12;
 					if ( hour == 12 ) {
 								hour = checkTime(hour);
-								var foo5 =  document.getElementById("date").innerHTML = hour+":"+minute+":"+ss+" AM";
+								var foo5 =  document.getElementById("hour").innerHTML = hour+":"+minute+":"+ss+" AM";
 						  }else{
 							hour = checkTime(hour);
-							var foo5 = document.getElementById("date").innerHTML = hour+":"+minute+":"+ss+" PM";
+							var foo5 = document.getElementById("hour").innerHTML = hour+":"+minute+":"+ss+" PM";
 						  }
 	}
 	else {
