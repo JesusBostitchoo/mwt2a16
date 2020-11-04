@@ -1,0 +1,13 @@
+.button-top{
+	border-radius: 0px;
+	background: linear-gradient(145deg, #ffffff, #ffffff);
+	box-shadow:  1px 1px 60px #cccccc, 
+				 0px 8px 0px #ffffff;	
+}
+
+.img_sueter{
+	height: 90px;
+}
+.img_sueter_vta{
+	height: 40px;
+}
